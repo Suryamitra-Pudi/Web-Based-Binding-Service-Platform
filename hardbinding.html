@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hard Binding</title>
+    <link rel="stylesheet" href="hardbinding.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hard Binding</h1>
+        <!-- Hidden file input -->
+        <input type="file" id="uploadFile" style="display:none">
+        <!-- Button to trigger file input -->
+        <button id="uploadButton" class="upload-btn" onclick="document.getElementById('uploadFile').click()">
+        Upload File
+        </button>
+        <div class="binding-options">
+            <div class="left-section">
+                <img src="https://sc-media-files.s3.amazonaws.com/static/assets/images/black.webp" alt="Hard Binding" class="binding-img">
+            </div>
+            
+            <div class="right-section">
+                <label for="colorSelect">Select Colour</label>
+                <select id="colorSelect">
+                    <option>Black and White</option>
+                    <option>Colour</option>
+                </select>
+
+                <div class="inline-options">
+                    <div>
+                        <label for="sides">No.of sides</label>
+                        <select id="sides">
+                            <option value="2">Single Side - ₹2/page</option>
+                            <option value="3">Two Sides - ₹3/page</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="copies">No.of copies</label>
+                        <input type="number" id="copies" value="1" min="1">
+                    </div>
+                </div>
+
+                <label for="coverPage">Cover Page</label>
+                <select id="coverPage">
+                    <option>Hard Sheet</option>
+                </select>
+
+                <div class="graph-sheets">
+                    <label for="graphSheets">I want graph sheets (₹10/page)</label>
+                    <input type="checkbox" id="graphSheets">
+                </div>
+
+                <div class="cost-details">
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Cost</th>
+                        </tr>
+                        <tr>
+                            <td>Base price</td>
+                            <td>₹ 45.00</td>
+                        </tr>
+                        <tr>
+                            <td>Printing price</td>
+                            <td>
+                                ₹ 2/page (One Side)<br>
+                                ₹ 3/page (Two Sides)<br>
+                                ₹ 10/page (Graph Sheets)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Total price: <span id="totalPrice">₹ 0</span></h3>
+                
+                <button id="addToCart">ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="hardbinding.js"></script>
+</body>
+</html>

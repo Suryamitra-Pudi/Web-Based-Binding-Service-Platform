@@ -1,0 +1,172 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #d3d3d3, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 450px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;  /* pushes items to left & right */
+  align-items: center;
+  padding: 10px 20px;
+  background: #ffffff;             /* clean white header */
+  border-bottom: 1px solid #ddd;   /* subtle line at bottom */
+}
+
+
+/* Profile Icon */
+.profile-icon {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;           
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.profile-name {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 45px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #fff;
+  border-radius: 12px;
+  background: linear-gradient(270deg, #ff416c, #ff4b2b, #1e90ff, #23d5ab);
+  background-size: 800% 800%;
+  animation: gradientMove 8s ease infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Background Gradient Movement */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.profile-container {
+    position: absolute;
+    top: 70px;
+    left: 90px;
+}
+
+.profile-icon {
+    width: 80px;
+    height auto;
+    cursor: pointer;   
+}
+
+.cart-container {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+  
+.cart-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;         
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;             /* makes 🛒 look nice */
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.menu-item {
+  display: inline-block;
+  width: 120px;               /* fixed rectangle width */
+  margin: 15px;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;                /* dark text */
+  background: #f5f5f5;        /* light gray background */
+  border: 1px solid #ccc;     /* subtle border */
+  border-radius: 6px;         /* slightly rounded corners */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Hover effect */
+.menu-item:hover {
+  transform: scale(1.05);       /* subtle size increase */
+  background: #e0e0e0;          /* slightly darker gray */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.menu-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://facultytick.com/wp-content/uploads/2022/07/D-N-R-College-of-Engineering-Technology.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: rgb(15, 14, 14);
+}
+.credits {
+  text-align: center;
+  font-size: 12px;
+  color: #040404;         /* subtle dark gray */
+  padding: 15px 0; /* light gray background to separate */
+  position: fixed;     /* keeps credits at the bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

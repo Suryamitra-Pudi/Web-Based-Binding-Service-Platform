@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Binding</title>
+    <link rel="stylesheet" href="softbinding.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Soft Binding</h1>
+        <!-- Hidden file input -->
+        <input type="file" id="uploadFile" style="display:none">
+        <!-- Button to trigger file input -->
+        <button id="uploadButton" class="upload-btn" onclick="document.getElementById('uploadFile').click()">
+        Upload File
+        </button>
+        <div class="binding-options">
+            <div class="left-section">
+                <img src="https://4.imimg.com/data4/SR/GF/MY-14112502/soft-cone-book-binding-services.jpg" alt="Soft Binding" class="binding-img">
+             </div>            
+             <div class="right-section">
+                <label for="colorSelect">Select Colour</label>
+                <select id="colorSelect">
+                    <option>Black and White</option>
+                    <option>Colour</option>
+                </select>
+
+                <div class="inline-options">
+                    <div>
+                        <label for="sides">No.of sides</label>
+                        <select id="sides">
+                            <option value="1.5">Single Side - ₹1.50/page</option>
+                            <option value="2">Two Sides - ₹2/page</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="copies">No.of pages</label>
+                        <input type="number" id="copies" value="1" min="1">
+                    </div>
+                </div>
+
+                <label for="coverPage">Cover Page</label>
+                <select id="coverPage">
+                    <option>Transparent Sheet</option>
+                </select>
+
+                <div class="graph-sheets">
+                    <label for="graphSheets">I want graph sheets (₹10/page)</label>
+                    <input type="checkbox" id="graphSheets">
+                </div>
+
+                <div class="cost-details">
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Cost</th>
+                        </tr>
+                        <tr>
+                            <td>Base price</td>
+                            <td>₹ 25.00</td>
+                        </tr>
+                        <tr>
+                            <td>Printing price</td>
+                            <td>
+                                ₹ 1.50/page (One Side)<br>
+                                ₹ 2/page (Two Sides)<br>
+                                ₹ 10/page (Graph Sheets)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Total price: <span id="totalPrice">₹ 0</span></h3>
+                
+                <button id="addToCart">ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="softbinding.js"></script>
+</body>
+</html>

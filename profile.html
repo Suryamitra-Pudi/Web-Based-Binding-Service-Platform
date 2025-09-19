@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .profile-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 350px;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #007bff;
+      margin-bottom: 15px;
+      cursor: pointer;
+      background: #eee;
+    }
+
+    .profile-card h2 {
+      font-size: 22px;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .profile-card .email {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0;
+    }
+
+    .profile-card .address {
+      font-size: 13px;
+      color: #888;
+      margin: 5px 0 15px;
+    }
+
+    .edit-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .edit-btn:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card">
+    <!-- Profile picture (clickable to upload new image) -->
+    <label for="profileUpload">
+      <img 
+        src="https://via.placeholder.com/120" 
+        alt="Profile Picture" 
+        id="profile-img" 
+        class="profile-img">
+    </label>
+    <input type="file" id="profileUpload" accept="image/*" style="display:none;">
+
+    <h2 id="profile-name">John Doe</h2>
+    <p class="email" id="profile-email">johndoe@example.com</p>
+    <p class="address" id="profile-address">123 Main St, City, Country</p>
+
+    <button class="edit-btn" onclick="editProfile()">Edit Profile</button>
+  </div>
+
+  <script>
+    const profileUpload = document.getElementById("profileUpload");
+    const profileImg = document.getElementById("profile-img");
+
+    // Image upload & preview
+    profileUpload.addEventListener("change", function () {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          profileImg.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Edit Profile button function
+    function editProfile() {
+      const name = prompt("Enter your name:", document.getElementById("profile-name").innerText);
+      const email = prompt("Enter your email:", document.getElementById("profile-email").innerText);
+      const address = prompt("Enter your address:", document.getElementById("profile-address").innerText);
+
+      if (name) document.getElementById("profile-name").innerText = name;
+      if (email) document.getElementById("profile-email").innerText = email;
+      if (address) document.getElementById("profile-address").innerText = address;
+    }
+  </script>
+
+</body>
+</html>
